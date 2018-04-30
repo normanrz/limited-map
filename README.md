@@ -7,8 +7,17 @@ Async map function with limited concurrency for JavaScript. This is a replacemen
 ```javascript
 const limitedMap = require("limited-map");
 
+async function getJSON(url) { ... }
+
+// With limited concurrency
 async function fetchDocs() {
   const docs = await limitedMap(urls, url => getJSON(url), 30);
+  return docs;
+}
+
+// With unlimited concurrency
+async function fetchDocsUnlimited() {
+  const docs = await Promise.all(urls.map(url => getJSON(url)));
   return docs;
 }
 ```
