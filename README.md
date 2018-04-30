@@ -16,7 +16,11 @@ async function fetchDocs() {
 ## API
 
 ```javascript
-limitedMap<T, U>(items: Array<T>, callback: (item: T, index: number, array: Array<T>) => Promise<U>, concurrency: number): Promise<Array<U>>
+limitedMap<T, U>(
+  items: Array<T>, 
+  callback: (item: T, index: number, array: Array<T>) => Promise<U>, 
+  concurrency: number
+): Promise<Array<U>>
 ```
 
 ## License
